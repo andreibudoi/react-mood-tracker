@@ -1,0 +1,32 @@
+.add-mood--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-items: center;
+    justify-content: center; */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 20px auto 10px auto;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 769px) {
+    .header-container {
+        width:65%;    
+    }
+}
+
+@media screen and (min-width: 1225px) {
+    .header-container {
+        width:40%;    
+    }
+}

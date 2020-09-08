@@ -1,0 +1,28 @@
+.text-header-highlight {
+    display: flex;
+    width: 100%;
+    margin: 15px 0px 5px 0px;
+}
+
+.text-header {
+
+    background-color: #76e2b3;
+    font-family: "Montserrat", sans-serif;
+    color: #2e5745;
+    font-size: 140%;
+    margin: 0px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 769px) {
+    .text-header {
+        font-size: 170%;
+    }
+}
+
+@media screen and (min-width: 1225px) {
+    .text-header {
+        font-size: 250%;
+    }
+}

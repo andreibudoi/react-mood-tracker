@@ -1,0 +1,16 @@
+.description {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+@media screen and (min-width: 769px) {
+    .description {
+        padding: 20px 30px;
+    }
+}
+
+@media screen and (min-width: 1225px) {
+    .description {
+        padding: 25px 50px;
+    }
+}

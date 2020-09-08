@@ -1,0 +1,16 @@
+.datetime {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    .datetime {
+        padding: 20px 30px;
+    }
+}
+
+@media screen and (min-width: 1225px) {
+    .datetime {
+        padding: 25px 50px;
+    }
+}

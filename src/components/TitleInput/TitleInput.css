@@ -1,0 +1,16 @@
+.title {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+@media screen and (min-width: 769px) {
+    .title {
+        padding: 20px 30px;
+    }
+}
+
+@media screen and (min-width: 1225px) {
+    .title {
+        padding: 25px 50px;
+    }
+}
