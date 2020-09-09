@@ -1,7 +1,7 @@
 import React from "react";
 import SentimentVerySatisfiedOutlinedIcon from "@material-ui/icons/SentimentVerySatisfiedOutlined"; //Great
-import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied"; //Good
-import SentimentSatisfiedOutlinedIcon from "@material-ui/icons/SentimentSatisfiedOutlined"; //Ok
+import SentimentSatisfiedOutlinedIcon from "@material-ui/icons/SentimentSatisfiedOutlined"; //Good
+import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied"; //Ok
 import SentimentDissatisfiedOutlinedIcon from "@material-ui/icons/SentimentDissatisfiedOutlined"; //Sad
 import SentimentVeryDissatisfiedOutlinedIcon from "@material-ui/icons/SentimentVeryDissatisfiedOutlined"; //Awful
 import IconButton from "@material-ui/core/IconButton";
@@ -28,30 +28,35 @@ const btnSize = {
     },
 };
 
-const greatMoodColor = {
-    primary: "#76e2b3",
-    hover: "#eafdf4",
-};
+const moodColors = {
+    "great" : {
+        primary: "#76e2b3",
+        secondary: "#eafdf4",
+        tertiary: "#2e5745"
+    },
+    "good": {
+        primary: "#62b4f9",
+        secondary: "#daedfc",
+        tertiary: "#2D5372"
+    },
+    "ok": {
+        primary: "#a482cc",
+        secondary: "#f4ebff",
+        tertiary: "#4B3C5E"
+    },
+    "sad": {
+        primary: "#f5b748",
+        secondary: "#fff1db",
+        tertiary: "#705421"
+    },
+    "awful": {
+        primary: "#ec536f",
+        secondary: "#ffd2da",
+        tertiary: "#6C2633"
+    }
+}
 
-const goodMoodColor = {
-    primary: "#62b4f9",
-    hover: "#daedfc",
-};
 
-const okMoodColor = {
-    primary: "#a482cc",
-    hover: "#f4ebff",
-};
-
-const sadMoodColor = {
-    primary: "#f5b748",
-    hover: "#fff1db",
-};
-
-const awfulMoodColor = {
-    primary: "#ec536f",
-    hover: "#ffd2da",
-};
 
 const useStyles = makeStyles({
     root: {
@@ -65,67 +70,67 @@ const useStyles = makeStyles({
     },
 
     moodBtn__awful_off: {
-        color: awfulMoodColor.primary,
+        color: moodColors["awful"].primary,
         "&:hover": {
-            backgroundColor: awfulMoodColor.hover,
+            backgroundColor: moodColors["awful"].secondary,
         },
     },
     moodBtn__awful_on: {
-        backgroundColor: awfulMoodColor.primary,
+        backgroundColor: moodColors["awful"].primary,
         "&:hover": {
-            backgroundColor: awfulMoodColor.primary,
+            backgroundColor: moodColors["awful"].primary,
         },
     },
 
     moodBtn__sad_off: {
-        color: sadMoodColor.primary,
+        color: moodColors["sad"].primary,
         "&:hover": {
-            backgroundColor: sadMoodColor.hover,
+            backgroundColor: moodColors["sad"].secondary,
         },
     },
     moodBtn__sad_on: {
-        backgroundColor: sadMoodColor.primary,
+        backgroundColor: moodColors["sad"].primary,
         "&:hover": {
-            backgroundColor: sadMoodColor.primary,
+            backgroundColor: moodColors["sad"].primary,
         },
     },
 
     moodBtn__ok_off: {
-        color: okMoodColor.primary,
+        color: moodColors["ok"].primary,
         "&:hover": {
-            backgroundColor: okMoodColor.hover,
+            backgroundColor: moodColors["ok"].secondary,
         },
     },
     moodBtn__ok_on: {
-        backgroundColor: okMoodColor.primary,
+        backgroundColor: moodColors["ok"].primary,
         "&:hover": {
-            backgroundColor: okMoodColor.primary,
+            backgroundColor: moodColors["ok"].primary,
         },
     },
 
     moodBtn__good_off: {
-        color: goodMoodColor.primary,
+        color: moodColors["good"].primary,
         "&:hover": {
-            backgroundColor: goodMoodColor.hover,
+            backgroundColor: moodColors["good"].secondary,
         },
     },
     moodBtn__good_on: {
-        backgroundColor: goodMoodColor.primary,
+        backgroundColor: moodColors["good"].primary,
         "&:hover": {
-            backgroundColor: goodMoodColor.primary,
+            backgroundColor: moodColors["good"].primary,
         },
     },
 
     moodBtn__great_off: {
-        color: greatMoodColor.primary,
+        color: moodColors["great"].primary,
         "&:hover": {
-            backgroundColor: greatMoodColor.hover,
+            backgroundColor: moodColors["great"].secondary,
         },
     },
     moodBtn__great_on: {
-        backgroundColor: greatMoodColor.primary,
+        backgroundColor: moodColors["great"].primary,
         "&:hover": {
-            backgroundColor: greatMoodColor.primary,
+            backgroundColor: moodColors["great"].primary,
         },
     },
 });

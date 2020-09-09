@@ -80,45 +80,37 @@ const AddMood = () => {
 
     return (
         <div className="add-mood">
-            <PaperContainer noshadow={true}>
+            <PaperContainer noShadow={true}>
                 <TextHeader text={"How are you?"} />
             </PaperContainer>
 
-            <div className="add-mood--form">
-                <PaperContainer>
-                    <DateTimeInput
-                        dateTime={dateTime}
-                        setDateTime={setDateTime}
+            <PaperContainer>
+                <DateTimeInput dateTime={dateTime} setDateTime={setDateTime} />
+            </PaperContainer>
+
+            <PaperContainer>
+                <MoodSelector mood={mood} setMood={setMood} />
+            </PaperContainer>
+
+            <PaperContainer>
+                <TitleInput title={title} setTitle={setTitle} />
+            </PaperContainer>
+
+            <PaperContainer>
+                <DescriptionInput
+                    description={description}
+                    setDescription={setDescription}
+                />
+            </PaperContainer>
+
+            <PaperContainer noShadow={true}>
+                <IconButton className={classes.root} onClick={onButtonSubmit}>
+                    <CheckCircleOutlinedIcon
+                        className={classes.svgIcon}
+                        fontSize="large"
                     />
-                </PaperContainer>
-
-                <PaperContainer>
-                    <MoodSelector mood={mood} setMood={setMood} />
-                </PaperContainer>
-
-                <PaperContainer>
-                    <TitleInput title={title} setTitle={setTitle} />
-                </PaperContainer>
-
-                <PaperContainer>
-                    <DescriptionInput
-                        description={description}
-                        setDescription={setDescription}
-                    />
-                </PaperContainer>
-
-                <PaperContainer noshadow={true}>
-                    <IconButton
-                        className={classes.root}
-                        onClick={onButtonSubmit}
-                    >
-                        <CheckCircleOutlinedIcon
-                            className={classes.svgIcon}
-                            fontSize="large"
-                        />
-                    </IconButton>
-                </PaperContainer>
-            </div>
+                </IconButton>
+            </PaperContainer>
         </div>
     );
 };
