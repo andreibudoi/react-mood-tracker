@@ -7,7 +7,6 @@ import SentimentVeryDissatisfiedOutlinedIcon from "@material-ui/icons/SentimentV
 import IconButton from "@material-ui/core/IconButton";
 import "./MoodSelector.css";
 import { makeStyles } from "@material-ui/core/styles";
-
 import { useMediaQuery } from "react-responsive";
 
 const btnSize = {
@@ -29,34 +28,32 @@ const btnSize = {
 };
 
 const moodColors = {
-    "great" : {
+    great: {
         primary: "#76e2b3",
         secondary: "#eafdf4",
-        tertiary: "#2e5745"
+        tertiary: "#2e5745",
     },
-    "good": {
+    good: {
         primary: "#62b4f9",
         secondary: "#daedfc",
-        tertiary: "#2D5372"
+        tertiary: "#2D5372",
     },
-    "ok": {
+    ok: {
         primary: "#a482cc",
         secondary: "#f4ebff",
-        tertiary: "#4B3C5E"
+        tertiary: "#4B3C5E",
     },
-    "sad": {
+    sad: {
         primary: "#f5b748",
         secondary: "#fff1db",
-        tertiary: "#705421"
+        tertiary: "#705421",
     },
-    "awful": {
+    awful: {
         primary: "#ec536f",
         secondary: "#ffd2da",
-        tertiary: "#6C2633"
-    }
-}
-
-
+        tertiary: "#6C2633",
+    },
+};
 
 const useStyles = makeStyles({
     root: {
@@ -153,7 +150,6 @@ const MoodSelector = ({ mood, setMood }) => {
     );
 
     const handleChange = (selectedMood) => () => {
-        console.log(selectedMood);
         setMood(selectedMood);
     };
 

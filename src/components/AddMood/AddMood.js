@@ -10,6 +10,8 @@ import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import PaperContainer from "../../containers/PaperContainer/PaperContainer";
 import { useMediaQuery } from "react-responsive";
+import { Link, useHistory } from "react-router-dom";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import moment from "moment";
 
 const btnSize = {
@@ -46,7 +48,9 @@ const useStyles = makeStyles({
     },
 });
 
-const AddMood = () => {
+const AddMood = ({ setUserData }) => {
+    let history = useHistory();
+
     const isMobileDevice = useMediaQuery({
         query: "(max-width: 768px)",
     });
@@ -68,20 +72,39 @@ const AddMood = () => {
 
     const onButtonSubmit = () => {
         if (mood) {
-            console.log({
-                id: 12,
-                dateTime: dateTime.toDate(),
-                mood,
-                title,
-                description,
-            });
+            setUserData((prevState) => ({
+                ...prevState,
+                entries: [
+                    {
+                        dateTime: dateTime.toDate(),
+                        mood,
+                        title,
+                        description,
+                    },
+                    ...prevState.entries,
+                ],
+            }));
+            history.push("/");
         }
     };
 
     return (
         <div className="add-mood">
             <PaperContainer noShadow={true}>
-                <TextHeader text={"How are you?"} />
+                <div className="add-mood-header">
+                    <TextHeader text={"How are you?"} />
+
+                    <IconButton
+                        className={classes.root}
+                        component={Link}
+                        to="/"
+                    >
+                        <ArrowBackIcon
+                            className={classes.svgIcon}
+                            fontSize="large"
+                        />
+                    </IconButton>
+                </div>
             </PaperContainer>
 
             <PaperContainer>

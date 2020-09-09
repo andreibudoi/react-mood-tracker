@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     width: 95%;
-    margin: 5px auto 5px auto;
+    margin: 7px auto 7px auto;
     border-radius: 5px;
     box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
 }
@@ -14,11 +14,13 @@
 @media screen and (min-width: 769px) {
     .paper {
         width:65%;    
+        margin: 10px auto 10px auto;
     }
 }
 
 @media screen and (min-width: 1225px) {
     .paper {
-        width:40%;    
+        width:40%;
+        margin: 12px auto 12px auto;    
     }
 }
