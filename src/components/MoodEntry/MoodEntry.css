@@ -10,12 +10,11 @@
     font-weight: 800;
     font-size: 105%;
     padding: 10px 10px;
-    border-radius: 5px 5px 0px 0px;
 }
 
 .entry-body {
     display: flex;
-    word-break: break-all;
+    /* word-break: break-all; */
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;

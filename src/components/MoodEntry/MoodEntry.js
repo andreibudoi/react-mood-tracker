@@ -56,7 +56,7 @@ const useStyles = makeStyles({
 });
 
 const MoodEntry = ({ entryData }) => {
-    const { date, title, description, mood } = entryData;
+    const { dateTime, title, description, mood } = entryData;
 
     const isMobileDevice = useMediaQuery({
         query: "(max-width: 768px)",
@@ -107,6 +107,8 @@ const MoodEntry = ({ entryData }) => {
         ),
     };
 
+    const isBodyEmpty = title === "" && description === "";
+
     return (
         <div
             className="entry"
@@ -117,23 +119,28 @@ const MoodEntry = ({ entryData }) => {
             <div
                 className="entry-header"
                 style={{
+                    borderRadius: isBodyEmpty
+                    ? "5px 5px 5px 5px"
+                    : "5px 5px 0px 0px",
                     backgroundColor: moodColors[mood].primary,
                 }}
             >
                 {moodIcons[mood]}
                 <div className="entry-datetime">
-                    {moment(date).format("MMMM Do YYYY, HH:mm").toString()}
+                    {moment(dateTime).format("MMMM Do YYYY, HH:mm").toString()}
                 </div>
             </div>
-            <div
-                className="entry-body"
-                style={{
-                    backgroundColor: moodColors[mood].secondary,
-                }}
-            >
-                <div className="entry-title">{title}</div>
-                <div className="entry-description">{description}</div>
-            </div>
+            {isBodyEmpty ? null : (
+                <div
+                    className="entry-body"
+                    style={{
+                        backgroundColor: moodColors[mood].secondary,
+                    }}
+                >
+                    <div className="entry-title">{title}</div>
+                    <div className="entry-description">{description}</div>
+                </div>
+            )}
         </div>
     );
 };

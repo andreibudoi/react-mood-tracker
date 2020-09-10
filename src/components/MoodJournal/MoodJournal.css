@@ -4,6 +4,20 @@
     align-items: center;
 }
 
+.empty {
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    justify-content: flex-end;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: large;
+    color: #2e5745;
+    background-color: #76e2b3;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
 .mood-journal-header {
     width: 100%;
     display: flex;

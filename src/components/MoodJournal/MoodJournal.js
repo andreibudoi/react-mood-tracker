@@ -75,13 +75,21 @@ const MoodJournal = ({ userData }) => {
                 </div>
             </PaperContainer>
 
-            {userData.entries.map((entry) => {
-                return (
-                    <PaperContainer>
-                        <MoodEntry entryData={entry} />
-                    </PaperContainer>
-                );
-            })}
+            {userData.entries.length ? (
+                userData.entries.map((entry) => {
+                    return (
+                        <PaperContainer
+                            key={entry.dateTime.toString() + entry.mood}
+                        >
+                            <MoodEntry entryData={entry} />
+                        </PaperContainer>
+                    );
+                })
+            ) : (
+                <PaperContainer noShadow={true}>
+                    <div className="empty">Add your first entry now! ⇧</div>
+                </PaperContainer>
+            )}
         </div>
     );
 };
