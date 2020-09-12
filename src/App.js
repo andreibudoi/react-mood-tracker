@@ -3,6 +3,8 @@ import "./App.css";
 import AddMood from "./components/AddMood/AddMood";
 import MoodJournal from "./components/MoodJournal/MoodJournal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Auth from "./components/Auth/Auth";
 
 const initialState = {
     name: "Andrei",
@@ -29,12 +31,12 @@ const initialState = {
             dateTime: new Date(),
             title: "What a good dayyyyyyyyyyyyyyy! :)",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a cursus sem. Pellentesque venenatis blandit justo. Sed nec turpis venenatis, laoreet ligula sed, posuere leo. Integer blandit sem sit amet fringilla bibendum. Sed lorem nulla, gravida vitae vehicula et, condimentum eu massa. Integer imperdiet dignissim ipsum, id laoreet lorem euismod sit amet. Aenean porttitor hendrerit lorem in consequat. Aenean non dignissim nunc. Sed vel fermentum sem. Proin convallis, sem vel laoreet pharetra, tortor ante bibendum diam, vitae tristique magna erat id tortor. Aenean a lectus aliquet, scelerisque massa quis, pellentesque sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ornare massa vitae lectus mattis, at scelerisque neque luctus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec interdum luctus lacus semper tempor.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a cursussssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss sem. Pellentesque venenatis blandit justo. Sed nec turpis venenatis, laoreet ligula sed, posuere leo. Integer blandit sem sit amet fringilla bibendum. Sed lorem nulla, gravida vitae vehicula et, condimentum eu massa. Integer imperdiet dignissim ipsum, id laoreet lorem euismod sit amet. Aenean porttitor hendrerit lorem in consequat. Aenean non dignissim nunc. Sed vel fermentum sem. Proin convallis, sem vel laoreet pharetra, tortor ante bibendum diam, vitae tristique magna erat id tortor. Aenean a lectus aliquet, scelerisque massa quis, pellentesque sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ornare massa vitae lectus mattis, at scelerisque neque luctus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec interdum luctus lacus semper tempor.",
             mood: "sad",
         },
         {
             dateTime: new Date(),
-            title: "What a good day! :)",
+            title: "",
             description: "I had an amazing evening",
             mood: "awful",
         },
@@ -43,16 +45,20 @@ const initialState = {
 
 const App = () => {
     const [userData, setUserData] = useState(initialState);
+    const [isAuth, setAuth] = useState(false);
 
     return (
         <Router>
             <Switch>
-                <Route path="/new">
+                <Route path="/auth">
+                    <Auth setUserData={setUserData} setAuth={setAuth} />
+                </Route>
+                <PrivateRoute path="/new" isAuth={isAuth}>
                     <AddMood setUserData={setUserData} />
-                </Route>
-                <Route path="/">
+                </PrivateRoute>
+                <PrivateRoute exact={true} path="/" isAuth={isAuth}>
                     <MoodJournal userData={userData} />
-                </Route>
+                </PrivateRoute>
             </Switch>
         </Router>
     );

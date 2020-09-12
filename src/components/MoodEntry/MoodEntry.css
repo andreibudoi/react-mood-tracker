@@ -14,11 +14,11 @@
 
 .entry-body {
     display: flex;
-    /* word-break: break-all; */
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
+    word-break: break-word;
     border-radius: 0px 0px 5px 5px;
     padding: 10px 10px;
 }
