@@ -1,4 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-mood-tracker
+
+This is a MERN stack application that includes authentication and mood logging. It also features Material-UI components and styling, public and private routing using react-router and HTTP requests to the [backend](https://github.com/andreibudoi/react-mood-tracker-api) with Axios.
+
+## Quick Start 🚀
+
+### Clone repo
+
+```bash
+git clone https://github.com/andreibudoi/react-mood-tracker.git
+```
+
+### Install dependencies
+
+```bash
+cd react-mood-tracker
+npm install
+```
 
 ## Available Scripts
 
