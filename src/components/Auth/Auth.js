@@ -6,6 +6,7 @@ import "./Auth.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -51,8 +52,21 @@ const Auth = ({ setAuth, setUserData }) => {
     };
 
     const onSubmitAuth = () => {
-        setAuth("true");
-        history.push("/");
+        axios
+            .post(`http://localhost:3001/${authType}`, {
+                name,
+                email,
+                password,
+            })
+            .then((res) => res.data)
+            .then((user) => {
+                if (user.email) {
+                    setUserData(user);
+                    setAuth("true");
+                    history.push("/");
+                }
+            })
+            .catch((err) => console.log(err));
     };
 
     const handleAuthType = () => {

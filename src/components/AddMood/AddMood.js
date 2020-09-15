@@ -13,6 +13,7 @@ import { useMediaQuery } from "react-responsive";
 import { Link, useHistory } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import moment from "moment";
+import axios from "axios";
 
 const btnSize = {
     desktop: {
@@ -48,7 +49,7 @@ const useStyles = makeStyles({
     },
 });
 
-const AddMood = ({ setUserData }) => {
+const AddMood = ({ userData, setUserData }) => {
     let history = useHistory();
 
     const isMobileDevice = useMediaQuery({
@@ -72,19 +73,24 @@ const AddMood = ({ setUserData }) => {
 
     const onButtonSubmit = () => {
         if (mood) {
-            setUserData((prevState) => ({
-                ...prevState,
-                entries: [
-                    {
+            axios
+                .post("http://localhost:3001/new", {
+                    email: userData.email,
+                    entry: {
                         dateTime: dateTime.toDate(),
                         mood,
                         title,
                         description,
                     },
-                    ...prevState.entries,
-                ],
-            }));
-            history.push("/");
+                })
+                .then((res) => res.data)
+                .then((entry) => {
+                    setUserData((prevState) => ({
+                        ...prevState,
+                        entries: [entry, ...prevState.entries],
+                    }));
+                    history.push("/");
+                });
         }
     };
 

@@ -7,40 +7,9 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Auth from "./components/Auth/Auth";
 
 const initialState = {
-    name: "Andrei",
-    entries: [
-        {
-            dateTime: new Date(),
-            title: "What a good day! :)",
-            description: "I had an amazing evening",
-            mood: "great",
-        },
-        {
-            dateTime: new Date(),
-            title: "What a good day! :) :) :) :) :) :) :) :) :) :) :) :) :) :)",
-            description: "",
-            mood: "good",
-        },
-        {
-            dateTime: new Date(),
-            title: "",
-            description: "",
-            mood: "ok",
-        },
-        {
-            dateTime: new Date(),
-            title: "What a good dayyyyyyyyyyyyyyy! :)",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a cursussssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss sem. Pellentesque venenatis blandit justo. Sed nec turpis venenatis, laoreet ligula sed, posuere leo. Integer blandit sem sit amet fringilla bibendum. Sed lorem nulla, gravida vitae vehicula et, condimentum eu massa. Integer imperdiet dignissim ipsum, id laoreet lorem euismod sit amet. Aenean porttitor hendrerit lorem in consequat. Aenean non dignissim nunc. Sed vel fermentum sem. Proin convallis, sem vel laoreet pharetra, tortor ante bibendum diam, vitae tristique magna erat id tortor. Aenean a lectus aliquet, scelerisque massa quis, pellentesque sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ornare massa vitae lectus mattis, at scelerisque neque luctus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec interdum luctus lacus semper tempor.",
-            mood: "sad",
-        },
-        {
-            dateTime: new Date(),
-            title: "",
-            description: "I had an amazing evening",
-            mood: "awful",
-        },
-    ],
+    name: "",
+    email: "",
+    entries: [],
 };
 
 const App = () => {
@@ -54,7 +23,7 @@ const App = () => {
                     <Auth setUserData={setUserData} setAuth={setAuth} />
                 </Route>
                 <PrivateRoute path="/new" isAuth={isAuth}>
-                    <AddMood setUserData={setUserData} />
+                    <AddMood userData={userData} setUserData={setUserData} />
                 </PrivateRoute>
                 <PrivateRoute exact={true} path="/" isAuth={isAuth}>
                     <MoodJournal userData={userData} />
