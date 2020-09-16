@@ -74,7 +74,7 @@ const AddMood = ({ userData, setUserData }) => {
     const onButtonSubmit = () => {
         if (mood) {
             axios
-                .post("http://localhost:3001/new", {
+                .post("https://quiet-earth-81142.herokuapp.com/new", {
                     email: userData.email,
                     entry: {
                         dateTime: dateTime.toDate(),

@@ -53,7 +53,7 @@ const Auth = ({ setAuth, setUserData }) => {
 
     const onSubmitAuth = () => {
         axios
-            .post(`http://localhost:3001/${authType}`, {
+            .post(`https://quiet-earth-81142.herokuapp.com/${authType}`, {
                 name,
                 email,
                 password,
