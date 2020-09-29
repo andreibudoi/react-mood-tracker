@@ -1,6 +1,6 @@
 {
   "short_name": "Mood Tracker",
-  "name": "Create React App Sample",
+  "name": "React Mood Tracker",
   "icons": [
     {
       "src": "favicon.ico",
