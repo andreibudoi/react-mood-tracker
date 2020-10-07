@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./AddMood.css";
-import MoodSelector from "../MoodSelector/MoodSelector";
+import MoodSelect from "../MoodSelect/MoodSelect";
 import TitleInput from "../TitleInput/TitleInput";
 import DateTimeInput from "../DateTimeInput/DateTimeInput";
 import DescriptionInput from "../DescriptionInput/DescriptionInput";
@@ -70,6 +70,7 @@ const AddMood = ({ userData, setUserData }) => {
     const [mood, setMood] = useState("");
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [gifId, setGifId] = useState("");
 
     const onButtonSubmit = () => {
         if (mood) {
@@ -118,7 +119,7 @@ const AddMood = ({ userData, setUserData }) => {
             </PaperContainer>
 
             <PaperContainer>
-                <MoodSelector mood={mood} setMood={setMood} />
+                <MoodSelect mood={mood} setMood={setMood} />
             </PaperContainer>
 
             <PaperContainer>

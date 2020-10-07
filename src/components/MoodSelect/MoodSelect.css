@@ -2,17 +2,17 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    padding: 10px 3px;
+    padding: 10px;
 }
 
 @media screen and (min-width: 769px) {
     .moodBtns {
-        padding: 20px 30px;
+        padding: 20px;
     }
 }
 
 @media screen and (min-width: 1225px) {
     .moodBtns {
-        padding: 25px 50px;
+        padding: 25px;
     }
 }

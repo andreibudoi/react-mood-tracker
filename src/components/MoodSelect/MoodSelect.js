@@ -5,7 +5,7 @@ import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied"; //Ok
 import SentimentDissatisfiedOutlinedIcon from "@material-ui/icons/SentimentDissatisfiedOutlined"; //Sad
 import SentimentVeryDissatisfiedOutlinedIcon from "@material-ui/icons/SentimentVeryDissatisfiedOutlined"; //Awful
 import IconButton from "@material-ui/core/IconButton";
-import "./MoodSelector.css";
+import "./MoodSelect.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { useMediaQuery } from "react-responsive";
 
