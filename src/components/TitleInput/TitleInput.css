@@ -1,16 +1,16 @@
 .title {
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px;
 }
 
 @media screen and (min-width: 769px) {
     .title {
-        padding: 20px 30px;
+        padding: 20px;
     }
 }
 
 @media screen and (min-width: 1225px) {
     .title {
-        padding: 25px 50px;
+        padding: 25px;
     }
 }

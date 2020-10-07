@@ -27,7 +27,6 @@ const DescriptionInput = ({ description, setDescription }) => {
                 value={description}
                 onChange={handleChange}
                 fullWidth={true}
-                variant="outlined"
                 label="Add some notes ..."
                 InputLabelProps={{
                     shrink: true,

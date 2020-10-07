@@ -29,7 +29,6 @@ const TitleInput = ({ title, setTitle }) => {
             <TextField
                 value={title}
                 onChange={handleChange}
-                variant="outlined"
                 fullWidth={true}
                 label="Moment title"
                 InputLabelProps={{
